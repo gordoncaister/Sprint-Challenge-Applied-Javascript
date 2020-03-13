@@ -37,6 +37,7 @@ function makeCarousel(arr){
     image.src = element;
     carousel.append(image);
     image.style.display = 'block';
+    image.order = 0;
   });
   
   let rightButton = document.createElement('div');
@@ -49,17 +50,32 @@ function makeCarousel(arr){
     if(counter <= 4 && counter > 1 ){
       document.querySelector(`.carousel img:nth-of-type(${counter})`).style.order = '-1';
       counter --;
+    } else {
+      document.querySelector(`.carousel img:nth-of-type(1)`).style.order = 1;
+      document.querySelector(`.carousel img:nth-of-type(2)`).style.order = 2;
+      document.querySelector(`.carousel img:nth-of-type(3)`).style.order = 3;
+      document.querySelector(`.carousel img:nth-of-type(4)`).style.order = 4;
+      counter = 4;
     }
     console.log(counter)
   })
 
-rightButton.addEventListener('click', () =>{
-  if(counter < 4 && counter > 0){
-    document.querySelector(`.carousel img:nth-of-type(${counter})`).style.order = '+1';
-    counter++;
-  }
-  console.log(counter)
-})
+  rightButton.addEventListener('click', () =>{
+    if(counter < 4 && counter >= 1){
+      document.querySelector(`.carousel img:nth-of-type(${counter})`).style.order = '+1';
+      console.log(document.querySelector(`.carousel img:nth-of-type(${counter})`))
+      counter++;
+      console.log(counter)
+    } else {
+      document.querySelector(`.carousel img:nth-of-type(1)`).style.order = 4;
+      document.querySelector(`.carousel img:nth-of-type(2)`).style.order = 3;
+      document.querySelector(`.carousel img:nth-of-type(3)`).style.order = 2;
+      document.querySelector(`.carousel img:nth-of-type(4)`).style.order = 1;
+      counter = 1;
+      console.log(counter)
+    }
+    console.log(counter)
+  })
 
   
   carousel.style.justifyContent = 'flex-start'
