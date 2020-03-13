@@ -20,9 +20,9 @@
 
 axios.get("https://lambda-times-backend.herokuapp.com/articles")
 .then (response => {
-    console.log(response)
+
     for (topic in response.data.articles){
-        console.log(topic)
+    
         response.data.articles[topic].forEach(article => {
             let card = document.createElement('div');
             card.classList.add('card');

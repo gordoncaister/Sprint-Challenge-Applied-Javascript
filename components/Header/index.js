@@ -15,7 +15,7 @@ function Header() {
 
     let date = document.createElement('span');
     date.classList.add('date');
-    date.innerText = "MARCH 28, 2019"
+    date.innerText = "SMARCH 28, 2019"
 
     let title = document.createElement('h1');
     title.innerText = 'Lambda Times';

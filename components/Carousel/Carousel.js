@@ -17,3 +17,51 @@
     <div class="right-button"> > </div>
   </div>
 */
+let carouselImages = [
+  "./assets/carousel/mountains.jpeg",
+  "./assets/carousel/computer.jpeg",
+  "./assets/carousel/trees.jpeg",
+  "./assets/carousel/turntable.jpeg"]
+
+function makeCarousel(arr){
+  let carousel = document.createElement('div');
+  carousel.classList.add('carousel');
+  
+  let leftButton = document.createElement('div');
+  leftButton.classList.add('left-button');
+  leftButton.textContent = "<"
+  carousel.append(leftButton)
+
+  arr.forEach(element => {
+    let image = document.createElement('img');
+    image.src = element;
+    carousel.append(image);
+    image.style.display = 'block';
+  });
+  
+  let rightButton = document.createElement('div');
+  rightButton.classList.add('right-button');
+  rightButton.textContent = ">"
+  carousel.append(rightButton);
+
+  
+
+  // 
+  carousel.style.justifyContent = 'flex-start'
+  return carousel;
+}
+document.querySelector('.carousel-container').append(makeCarousel(carouselImages))
+
+let images = document.querySelectorAll('.carousel img');
+let leftButton = document.querySelector('.left-button');
+let rightButton = document.querySelector('.right-button');
+
+let current = 1;
+let imageWidth = '1200'; 
+
+let carousel = document.querySelector('.carousel');
+
+
+leftButton.addEventListener('click', () =>{
+
+})
