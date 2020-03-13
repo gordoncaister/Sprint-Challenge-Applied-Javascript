@@ -44,24 +44,18 @@ function makeCarousel(arr){
   rightButton.textContent = ">"
   carousel.append(rightButton);
 
+  leftButton.addEventListener('click', () =>{
+    
+  })
   
+  rightButton.addEventListener('click', () =>{
+    
+  })
 
-  // 
+  
   carousel.style.justifyContent = 'flex-start'
   return carousel;
 }
 document.querySelector('.carousel-container').append(makeCarousel(carouselImages))
 
-let images = document.querySelectorAll('.carousel img');
-let leftButton = document.querySelector('.left-button');
-let rightButton = document.querySelector('.right-button');
 
-let current = 1;
-let imageWidth = '1200'; 
-
-let carousel = document.querySelector('.carousel');
-
-
-leftButton.addEventListener('click', () =>{
-
-})
