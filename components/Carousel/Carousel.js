@@ -43,14 +43,23 @@ function makeCarousel(arr){
   rightButton.classList.add('right-button');
   rightButton.textContent = ">"
   carousel.append(rightButton);
-
-  leftButton.addEventListener('click', () =>{
-    
-  })
   
-  rightButton.addEventListener('click', () =>{
-    
+  let counter = 1;
+  leftButton.addEventListener('click', () =>{
+    if(counter <= 4 && counter > 1 ){
+      document.querySelector(`.carousel img:nth-of-type(${counter})`).style.order = '-1';
+      counter --;
+    }
+    console.log(counter)
   })
+
+rightButton.addEventListener('click', () =>{
+  if(counter < 4 && counter > 0){
+    document.querySelector(`.carousel img:nth-of-type(${counter})`).style.order = '+1';
+    counter++;
+  }
+  console.log(counter)
+})
 
   
   carousel.style.justifyContent = 'flex-start'
